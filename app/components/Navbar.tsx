@@ -5,10 +5,10 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
        <Link to='/'>
-        <p className="text-2xl font-bold text-gradient">AI</p>
+        <p className="text-2xl font-bold text-gradient"> Resume Review with AI</p>
        </Link>
-       <Link to='/upload'>
-        upload Resume
+       <Link to='/upload' className='primary-button w-fit'>
+        Upload Resume
        </Link>
     </nav>
   )
