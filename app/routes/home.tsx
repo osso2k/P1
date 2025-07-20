@@ -19,11 +19,13 @@ export default function Home() {
         <h1>Improve Your Resume</h1>
         <h2>Analyze Your Resume with AI-powered feedback.</h2>
       </div>
-    </section>
-    {resumes.map((resume)=> (
-      <div>
-        <ResumeCaaard />
-      </div>
-    ))}
+    {resumes.length >0 && (
+      <div className="resume-section">
+      {resumes.map((resume)=> (
+        <ResumeCaaard key={resume.id} resume={resume} />
+      ))}
+        </div>
+      )}
+      </section>
   </main>;
 }
