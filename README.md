@@ -69,7 +69,7 @@ The containerized application can be deployed to any platform that supports Dock
 If you're familiar with deploying Node applications, the built-in app server is production-ready.
 
 Make sure to deploy the output of `npm run build`
-
+Yup!
 ```
 ├── package.json
 ├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
