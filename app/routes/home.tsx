@@ -2,7 +2,7 @@ import Navbar from "~/components/Navbar";
 import type { Route } from "./+types/home";
 import { resumes } from "../../constants";
 import ResumeCaaard from "~/components/ResumeCaaard";
-
+/* Heyyy*/
 
 export function meta({}: Route.MetaArgs) {
   return [
