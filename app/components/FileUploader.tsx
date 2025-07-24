@@ -2,7 +2,7 @@ import React,{useCallback , useState} from 'react'
 import { useDropzone } from 'react-dropzone'
 import { formatSize } from '~/lib/utils';
 
-const maxFileSize = 10 * 1024 * 1024; // 10MB limit
+const maxFileSize = 20 * 1024 * 1024; // 10MB limit
 
 interface FileUploaderProps {
     onFileSelect?:(file:File | null)=>void;
@@ -28,14 +28,26 @@ const FileUploader = ({onFileSelect}:FileUploaderProps) => {
                         <img src="/icons/info.svg" className='size-20' alt="" />
                     </div>
                     {acceptedFiles[0] ? (
-                        <div className='flex items-center space-x-3'>
-                            <p className='text-lg text-gray-500 font-medium truncate'>
-                                {acceptedFiles[0].name}
-                            </p>
-                            <p className="text-sm text-gray-500">
-                                {formatSize(acceptedFiles[0].size)}
-                            </p>
-                        </div>
+                        <div className="uploader-selected-file"  onClick={(e)=>e.stopPropagation()} >
+                            <img src="/images/pdf.png" alt="" className='size-10' />
+                            <div className='flex items-center space-x-3'>
+                                <div>
+                                <p className='text-sm text-gray-700 font-medium truncate max-w-xs'>
+                                    {acceptedFiles[0].name}
+                                </p>
+                                <p className="text-sm text-gray-500">
+                                    {formatSize(acceptedFiles[0].size)}
+                                </p>
+
+                                </div>
+                            </div>
+                            <button className='cursor-pointer p-2' onClick={(e)=>{
+                                onFileSelect?.(null)
+                            }}>
+
+                                <img src="/icons/cross.svg" className='w-4 h-4' alt="" />
+                            </button>
+                        </div> 
                     ):(
                         <div>
                             <p className='text-lg text-gray-500 '>
